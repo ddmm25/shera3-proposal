@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المخطط التنظيمي للعرض الفني والمالي - شركة شراع</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #04121f;
+            color: #f1f5f9;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(20, 184, 166, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(2, 132, 199, 0.08) 0px, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        /* حركات اللوجو والأقسام والمؤثرات */
+        @keyframes gentle-float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-8px) rotate(0.8deg);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 25px rgba(20, 184, 166, 0.35), 0 0 50px rgba(14, 165, 233, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(20, 184, 166, 0.6), 0 0 70px rgba(14, 165, 233, 0.35);
+            }
+        }
+
+        @keyframes floating-btn {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+            }
+            50% {
+                transform: translateY(-6px) scale(1.03);
+            }
+        }
+
+        .animate-float-main {
+            animation: gentle-float 4.5s ease-in-out infinite, pulse-glow 3.5s ease-in-out infinite;
+        }
+
+        .animate-float-pill {
+            animation: floating-btn 3.8s ease-in-out infinite;
+        }
+
+        /* كروت زجاجية بنمط أزرق بحري وتركواز */
+        .glass-card {
+            background: linear-gradient(135deg, rgba(8, 30, 48, 0.75) 0%, rgba(10, 42, 66, 0.6) 100%);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(45, 212, 191, 0.18);
+            box-shadow: 0 12px 35px -10px rgba(3, 18, 31, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(45, 212, 191, 0.45);
+            box-shadow: 0 18px 40px -10px rgba(14, 165, 233, 0.25), inset 0 1px 0 rgba(45, 212, 191, 0.2);
+        }
+
+        .ocean-turquoise-gradient {
+            background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 50%, #0284c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sub-card {
+            background: rgba(8, 25, 41, 0.65);
+            border: 1px solid rgba(56, 189, 248, 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .sub-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(45, 212, 191, 0.35);
+            background: rgba(12, 35, 58, 0.85);
+        }
+
+        /* تأثير تقدم القراءة السلس */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-6 lg:p-10 flex flex-col items-center relative overflow-x-hidden">
+
+    <!-- اللوجو العائم بالشاشة (Floating Logo Badge) -->
+    <a href="#top" title="شركة شراع - العودة للأعلى" 
+       class="fixed bottom-6 left-6 z-50 animate-float-pill group flex items-center gap-3 p-2 bg-slate-900/90 hover:bg-slate-800 border-2 border-teal-400/50 hover:border-teal-300 rounded-2xl shadow-2xl backdrop-blur-md transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-950 flex items-center justify-center p-1 border border-teal-500/30">
+            <img src="https://i.ibb.co/tMK6J8vk/63ba8ba0-71a2-41a8-af8b-61f34bb6b90e.jpg" 
+                 alt="شعار شركة شراع" 
+                 class="w-full h-full object-contain rounded-lg">
+        </div>
+        <div class="hidden sm:flex flex-col text-right pl-3 pr-1">
+            <span class="text-xs font-bold text-teal-300 group-hover:text-cyan-200">شركة شراع</span>
+            <span class="text-[10px] text-slate-400">للخدمات التسويقية</span>
+        </div>
+    </a>
+
+    <div id="top" class="w-full max-w-5xl space-y-10">
+
+        <!-- ترويسة العرض والمقدمة مع اللوجو الرئيسي -->
+        <header class="text-center space-y-5 flex flex-col items-center">
+            
+            <!-- اللوجو الرئيسي في أعلى منتصف العرض (مربع منحني الحواف ومتحرك) -->
+            <div class="animate-float-main w-28 h-28 sm:w-32 sm:h-32 p-2.5 rounded-3xl bg-gradient-to-br from-teal-500/20 via-sky-600/20 to-teal-900/40 border-2 border-teal-400/60 backdrop-blur-xl flex items-center justify-center shadow-2xl">
+                <div class="w-full h-full rounded-2xl overflow-hidden bg-slate-950/80 p-2 border border-teal-400/30 flex items-center justify-center">
+                    <img src="https://i.ibb.co/tMK6J8vk/63ba8ba0-71a2-41a8-af8b-61f34bb6b90e.jpg" 
+                         alt="شعار شركة شراع" 
+                         class="w-full h-full object-contain rounded-xl">
+                </div>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-teal-950/70 border border-teal-500/40 text-teal-300 text-xs sm:text-sm font-semibold shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+                شركة شراع • مخطط تدفق العمليات والهيكل التشغيلي
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black ocean-turquoise-gradient tracking-tight">
+                العرض الفني والمالي
+            </h1>
+            <h2 class="text-lg sm:text-2xl font-bold text-sky-100/90">
+                خدمات إدارة حسابات التواصل الاجتماعي وإدارة الحملات الإعلانية
+            </h2>
+            
+            <div class="glass-card p-6 sm:p-8 rounded-3xl text-right mt-6 border-r-4 border-r-teal-400 w-full">
+                <h3 class="text-lg font-bold text-teal-300 mb-2 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-teal-400"></span>
+                    مقدمة
+                </h3>
+                <p class="text-slate-200 leading-relaxed text-sm sm:text-base">
+                    انطلاقاً من أهمية الحضور الرقمي الفعّال في بناء العلامات التجارية وتعزيز قدرتها التنافسية، نقدم لكم عرضنا الفني لإدارة حسابات التواصل الاجتماعي وتنفيذ وإدارة الحملات الإعلانية الممولة، من خلال منظومة عمل متكاملة تهدف إلى تطوير الصورة الرقمية للعلامة التجارية، وزيادة الوعي بالخدمات والمنتجات، وتعزيز التواصل مع الجمهور المستهدف، والمساهمة في تحقيق النمو التجاري.
+                </p>
+                <p class="text-slate-200 leading-relaxed text-sm sm:text-base mt-2.5">
+                    تعتمد آلية العمل على التخطيط التسويقي المسبق، وإنتاج المحتوى الإبداعي، وإدارة المنصات الرقمية، وتنفيذ الحملات الإعلانية، مع المتابعة المستمرة وتحليل الأداء وتطوير الاستراتيجيات بناءً على النتائج.
+                </p>
+            </div>
+        </header>
+
+        <!-- أولاً: دراسة النشاط وإعداد الاستراتيجية التسويقية -->
+        <section class="glass-card p-6 sm:p-8 rounded-3xl border-t-4 border-t-teal-400">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-300 font-black flex items-center justify-center border border-teal-500/30">1</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">أولاً: دراسة النشاط وإعداد الاستراتيجية التسويقية</h3>
+            </div>
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                تبدأ مرحلة العمل بدراسة النشاط التجاري وفهم طبيعة المنتجات أو الخدمات المقدمة، وتحديد المميزات التنافسية التي يمكن توظيفها في التواصل التسويقي. وتشمل هذه المرحلة:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="sub-card p-4 rounded-2xl">
+                    <h4 class="font-bold text-teal-300 mb-2 text-sm sm:text-base">• تحليل النشاط التجاري:</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">دراسة طبيعة النشاط والخدمات والمنتجات، وتحديد نقاط القوة والمميزات التي يمكن إبرازها للجمهور.</p>
+                </div>
+                <div class="sub-card p-4 rounded-2xl">
+                    <h4 class="font-bold text-teal-300 mb-2 text-sm sm:text-base">• تحليل الجمهور المستهدف:</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">تحديد الشرائح المستهدفة وفقاً للعمر والموقع الجغرافي والاهتمامات والسلوك الشرائي والاحتياجات.</p>
+                </div>
+                <div class="sub-card p-4 rounded-2xl">
+                    <h4 class="font-bold text-teal-300 mb-2 text-sm sm:text-base">• تحليل المنافسين:</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">دراسة حضور المنافسين على منصات التواصل الاجتماعي، وتحليل أساليب المحتوى والتواصل والعروض التسويقية المستخدمة لديهم.</p>
+                </div>
+                <div class="sub-card p-4 rounded-2xl">
+                    <h4 class="font-bold text-teal-300 mb-2 text-sm sm:text-base">• تحديد الأهداف التسويقية:</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">وضع أهداف واضحة تشمل زيادة الوعي بالعلامة التجارية، وتحسين معدلات التفاعل، وزيادة الزيارات والاستفسارات، ودعم المبيعات.</p>
+                </div>
+                <div class="sub-card p-4 rounded-2xl">
+                    <h4 class="font-bold text-teal-300 mb-2 text-sm sm:text-base">• تحديد الهوية الاتصالية:</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">تحديد أسلوب التواصل ونبرة الخطاب المناسبة للعلامة التجارية، بما يضمن توحيد الرسائل التسويقية عبر مختلف المنصات.</p>
+                </div>
+                <div class="sub-card p-4 rounded-2xl">
+                    <h4 class="font-bold text-teal-300 mb-2 text-sm sm:text-base">• إعداد الخطة التسويقية:</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">وضع تصور شهري متكامل للمحتوى والحملات الإعلانية وآليات التنفيذ والمتابعة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ثانياً: إدارة حسابات التواصل الاجتماعي -->
+        <section class="glass-card p-6 sm:p-8 rounded-3xl border-t-4 border-t-sky-500">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-300 font-black flex items-center justify-center border border-sky-500/30">2</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">ثانياً: إدارة حسابات التواصل الاجتماعي</h3>
+            </div>
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                تتضمن الخدمة الإدارة التشغيلية والتسويقية لحسابات التواصل الاجتماعي، بداية من التخطيط للمحتوى وحتى النشر ومتابعة الأداء.
+            </p>
+
+            <div class="space-y-5">
+                <!-- 1 -->
+                <div class="sub-card p-5 rounded-2xl border-r-4 border-r-sky-400">
+                    <h4 class="font-bold text-sky-300 text-base mb-3">1. إعداد خطة المحتوى الشهرية</h4>
+                    <ul class="space-y-2 text-slate-300 text-xs sm:text-sm pr-2">
+                        <li>• إعداد تقويم محتوى شهري يحدد موضوعات المنشورات ومواعيد النشر.</li>
+                        <li>• توزيع المحتوى بين المحتوى التعريفي والتسويقي والتفاعلي والتوعوي.</li>
+                        <li>• إبراز المنتجات والخدمات والمميزات التنافسية.</li>
+                        <li>• إعداد محتوى مخصص للمناسبات والأحداث الموسمية ذات الصلة بالنشاط.</li>
+                        <li>• مراعاة تنوع الأفكار والأساليب لتجنب تكرار المحتوى وتحقيق استمرارية التفاعل.</li>
+                    </ul>
+                </div>
+
+                <!-- 2 -->
+                <div class="sub-card p-5 rounded-2xl border-r-4 border-r-teal-400">
+                    <h4 class="font-bold text-teal-300 text-base mb-3">2. كتابة المحتوى التسويقي والإبداعي</h4>
+                    <ul class="space-y-2 text-slate-300 text-xs sm:text-sm pr-2">
+                        <li>• كتابة النصوص التسويقية للمنشورات بأسلوب احترافي يتناسب مع الجمهور المستهدف.</li>
+                        <li>• صياغة العناوين والعبارات الجاذبة للانتباه.</li>
+                        <li>• إعداد الدعوات لاتخاذ إجراء (Call To Action) لتشجيع الجمهور على التواصل أو الطلب أو الشراء.</li>
+                        <li>• كتابة النصوص التعريفية بالمنتجات والخدمات.</li>
+                        <li>• إعداد محتوى يعالج احتياجات الجمهور ويبرز الحلول التي يقدمها النشاط.</li>
+                        <li>• استخدام الكلمات والعبارات المناسبة لطبيعة كل منصة.</li>
+                    </ul>
+                </div>
+
+                <!-- 3 -->
+                <div class="sub-card p-5 rounded-2xl border-r-4 border-r-sky-400">
+                    <h4 class="font-bold text-sky-300 text-base mb-3">3. التصميم والإنتاج الإبداعي</h4>
+                    <ul class="space-y-2 text-slate-300 text-xs sm:text-sm pr-2">
+                        <li>• تصميم المنشورات والصور التسويقية بما يتناسب مع الهوية البصرية للعلامة التجارية.</li>
+                        <li>• إعداد التصاميم التعريفية بالمنتجات والخدمات.</li>
+                        <li>• تصميم العروض والخصومات والحملات الموسمية.</li>
+                        <li>• إعداد تصميمات تفاعلية تهدف إلى زيادة مشاركة الجمهور.</li>
+                        <li>• تجهيز المقاسات والأبعاد المناسبة لكل منصة.</li>
+                        <li>• الحفاظ على الاتساق البصري بين جميع المنشورات لضمان بناء صورة ذهنية واضحة للعلامة التجارية.</li>
+                    </ul>
+                </div>
+
+                <!-- 4 -->
+                <div class="sub-card p-5 rounded-2xl border-r-4 border-r-teal-400">
+                    <h4 class="font-bold text-teal-300 text-base mb-3">4. إدارة النشر والجدولة</h4>
+                    <ul class="space-y-2 text-slate-300 text-xs sm:text-sm pr-2">
+                        <li>• تنظيم عملية النشر وفق جدول زمني محدد.</li>
+                        <li>• تحديد التوقيتات المناسبة للنشر وفق طبيعة الجمهور ونشاط الحساب.</li>
+                        <li>• مراجعة المحتوى والتصاميم قبل النشر.</li>
+                        <li>• جدولة المنشورات ومتابعة ظهورها بالشكل الصحيح.</li>
+                        <li>• تنسيق الرسائل التسويقية بين مختلف المنصات لضمان تكامل التواصل الرقمي.</li>
+                    </ul>
+                </div>
+
+                <!-- 5 -->
+                <div class="sub-card p-5 rounded-2xl border-r-4 border-r-sky-400">
+                    <h4 class="font-bold text-sky-300 text-base mb-3">5. إدارة التفاعل ومتابعة الجمهور</h4>
+                    <ul class="space-y-2 text-slate-300 text-xs sm:text-sm pr-2">
+                        <li>• متابعة التعليقات والتفاعلات على المنشورات.</li>
+                        <li>• متابعة الرسائل والاستفسارات الواردة عبر الحسابات وفق نطاق الصلاحيات المتفق عليه.</li>
+                        <li>• توجيه الاستفسارات التجارية إلى قنوات التواصل المناسبة.</li>
+                        <li>• رصد الأسئلة المتكررة وملاحظات العملاء.</li>
+                        <li>• متابعة تفاعل الجمهور مع المحتوى وتحديد الموضوعات الأكثر جذباً لاهتمامه.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ثالثاً: إدارة الحملات الإعلانية الممولة -->
+        <section class="glass-card p-6 sm:p-8 rounded-3xl border-t-4 border-t-cyan-500">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-9 h-9 rounded-xl bg-cyan-500/20 text-cyan-300 font-black flex items-center justify-center border border-cyan-500/30">3</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">ثالثاً: إدارة الحملات الإعلانية الممولة</h3>
+            </div>
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                نعمل على تخطيط وتنفيذ وإدارة الحملات الإعلانية المدفوعة بهدف الوصول إلى الجمهور المناسب وتحقيق أفضل استفادة ممكنة من الميزانية الإعلانية.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- 1 -->
+                <div class="sub-card p-5 rounded-2xl">
+                    <h4 class="font-bold text-cyan-300 text-base mb-3">1. التخطيط والاستراتيجية الإعلانية</h4>
+                    <ul class="space-y-2 text-slate-300 text-xs sm:text-sm">
+                        <li>• تحديد الأهداف الإعلانية وفقاً للأولويات التجارية للنشاط.</li>
+                        <li>• اختيار المنصات الإعلانية المناسبة لطبيعة الجمهور والمنتجات.</li>
+                        <li>• تحديد الشرائح المستهدفة والمناطق الجغرافية.</li>
+                        <li>• توزيع الميزانية الإعلانية على الحملات وفقاً للأهداف والأولويات.</li>
+                        <li>• تحديد الرسائل والعروض التسويقية المناسبة لكل شريحة.</li>
+                    </ul>
+                </div>
+
+                <!-- 2 -->
+                <div class="sub-card p-5 rounded-2xl">
+                    <h4 class="font-bold text-cyan-300 text-base mb-2">2. إنشاء وتجهيز الحملات الإعلانية</h4>
+                    <p class="text-slate-400 text-xs mb-2">إعداد الحملات على المنصات المناسبة، ومنها:</p>
+                    <ul class="text-slate-300 text-xs sm:text-sm space-y-1 pr-2 mb-3">
+                        <li>- إعلانات Meta عبر Facebook وInstagram.</li>
+                        <li>- إعلانات Snapchat.</li>
+                        <li>- إعلانات TikTok.</li>
+                        <li>- إعلانات Google عند ملاءمتها لطبيعة النشاط.</li>
+                    </ul>
+                    <p class="text-slate-400 text-xs mb-2">ويشمل التجهيز:</p>
+                    <ul class="space-y-1.5 text-slate-300 text-xs sm:text-sm pr-2">
+                        <li>• إعداد الحملات والمجموعات الإعلانية والإعلانات.</li>
+                        <li>• بناء شرائح الجمهور المستهدف.</li>
+                        <li>• إعداد النصوص الإعلانية والعناوين.</li>
+                        <li>• اختيار المواد الإبداعية والتصاميم المناسبة.</li>
+                        <li>• إعداد روابط التحويل وصفحات الهبوط عند الحاجة.</li>
+                        <li>• مراجعة إعدادات الحملات قبل إطلاقها.</li>
+                    </ul>
+                </div>
+
+                <!-- 3 -->
+                <div class="sub-card p-5 rounded-2xl">
+                    <h4 class="font-bold text-cyan-300 text-base mb-2">3. تحسين الأداء الإعلاني</h4>
+                    <p class="text-slate-400 text-xs mb-3">
+                        لا تقتصر إدارة الحملات على إطلاق الإعلانات فقط، بل تشمل المتابعة والتحسين المستمر من خلال:
+                    </p>
+                    <ul class="space-y-2 text-slate-300 text-xs sm:text-sm">
+                        <li>• مراقبة أداء الحملات ومعدلات الوصول والتفاعل والنقرات.</li>
+                        <li>• تحليل تكلفة النتائج ومقارنتها بأهداف الحملة.</li>
+                        <li>• اختبار أكثر من تصميم ونص إعلاني.</li>
+                        <li>• تجربة شرائح مختلفة من الجمهور المستهدف.</li>
+                        <li>• إيقاف الإعلانات ضعيفة الأداء عند الحاجة.</li>
+                        <li>• إعادة توزيع الميزانية على الإعلانات والشرائح الأكثر كفاءة.</li>
+                        <li>• تطوير الرسائل الإعلانية بناءً على سلوك الجمهور ونتائج الحملات.</li>
+                    </ul>
+                </div>
+
+                <!-- 4 -->
+                <div class="sub-card p-5 rounded-2xl">
+                    <h4 class="font-bold text-cyan-300 text-base mb-2">4. إعادة استهداف الجمهور (Remarketing)</h4>
+                    <p class="text-slate-400 text-xs mb-3">
+                        عند توافر أدوات التتبع والبيانات اللازمة، يتم العمل على:
+                    </p>
+                    <ul class="space-y-2 text-slate-300 text-xs sm:text-sm">
+                        <li>• استهداف الأشخاص الذين تفاعلوا مع الحسابات والإعلانات.</li>
+                        <li>• إعادة الوصول إلى زوار الموقع الإلكتروني.</li>
+                        <li>• استهداف الجمهور الذي أبدى اهتماماً بالمنتجات أو الخدمات.</li>
+                        <li>• إنشاء حملات مخصصة لتحفيز العملاء المحتملين على استكمال عملية الشراء أو التواصل.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- رابعاً: التقارير وتحليل الأداء -->
+        <section class="glass-card p-6 sm:p-8 rounded-3xl border-t-4 border-t-teal-500">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-300 font-black flex items-center justify-center border border-teal-500/30">4</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">رابعاً: التقارير وتحليل الأداء</h3>
+            </div>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+                يتم تقديم تقارير دورية لمتابعة نتائج الأنشطة التسويقية وقياس مدى التقدم نحو الأهداف المحددة. وتشمل التقارير:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• تحليل نمو الحسابات وعدد المتابعين.</div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• قياس معدلات الوصول والانطباعات.</div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• متابعة معدلات التفاعل مع المنشورات.</div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• تحديد أفضل المنشورات من حيث الأداء.</div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• تحليل نتائج الحملات الإعلانية.</div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• متابعة عدد النقرات والزيارات والتفاعلات والاستفسارات وفقاً لأهداف الحملات.</div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• تحليل تكلفة النتائج الإعلانية.</div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• توضيح أبرز التحديات والفرص التسويقية.</div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm">• تقديم توصيات عملية لتطوير الأداء خلال الفترة التالية.</div>
+            </div>
+        </section>
+
+        <!-- خامساً: خطة التنفيذ الشهرية -->
+        <section class="glass-card p-6 sm:p-8 rounded-3xl border-t-4 border-t-sky-400">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-300 font-black flex items-center justify-center border border-sky-500/30">5</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">خامساً: خطة التنفيذ الشهرية</h3>
+            </div>
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                يتم تنفيذ الأعمال وفق دورة تشغيل شهرية منظمة على النحو التالي:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- الأسبوع الأول -->
+                <div class="sub-card p-5 rounded-2xl border-t-4 border-t-teal-400 flex flex-col justify-between">
+                    <div>
+                        <div class="text-teal-400 font-bold text-xs uppercase tracking-wider mb-1">الأسبوع الأول</div>
+                        <div class="text-white font-bold text-base mb-3">التخطيط والتجهيز</div>
+                        <ul class="text-slate-300 text-xs space-y-2">
+                            <li>• مراجعة أداء الحسابات والأنشطة السابقة.</li>
+                            <li>• دراسة التوجهات التسويقية والمنافسين.</li>
+                            <li>• إعداد خطة المحتوى للشهر.</li>
+                            <li>• تجهيز الأفكار والنصوص والتصاميم.</li>
+                            <li>• إعداد الاستراتيجية الإعلانية وتوزيع الميزانية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- الأسبوع الثاني -->
+                <div class="sub-card p-5 rounded-2xl border-t-4 border-t-sky-400 flex flex-col justify-between">
+                    <div>
+                        <div class="text-sky-400 font-bold text-xs uppercase tracking-wider mb-1">الأسبوع الثاني</div>
+                        <div class="text-white font-bold text-base mb-3">الإطلاق والتنفيذ</div>
+                        <ul class="text-slate-300 text-xs space-y-2">
+                            <li>• بدء نشر المحتوى وفق الجدول المعتمد.</li>
+                            <li>• إطلاق الحملات الإعلانية.</li>
+                            <li>• متابعة التفاعل الأولي مع المحتوى والإعلانات.</li>
+                            <li>• مراجعة أداء الإعلانات وإجراء التحسينات الأولية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- الأسبوع الثالث -->
+                <div class="sub-card p-5 rounded-2xl border-t-4 border-t-teal-400 flex flex-col justify-between">
+                    <div>
+                        <div class="text-teal-400 font-bold text-xs uppercase tracking-wider mb-1">الأسبوع الثالث</div>
+                        <div class="text-white font-bold text-base mb-3">التحسين والتطوير</div>
+                        <ul class="text-slate-300 text-xs space-y-2">
+                            <li>• تحليل نتائج الحملات.</li>
+                            <li>• اختبار المواد الإعلانية والرسائل المختلفة.</li>
+                            <li>• تحسين الجمهور والاستهداف.</li>
+                            <li>• تطوير المحتوى وفقاً لمؤشرات الأداء.</li>
+                            <li>• إعادة توزيع الميزانية عند الحاجة.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- الأسبوع الرابع -->
+                <div class="sub-card p-5 rounded-2xl border-t-4 border-t-sky-400 flex flex-col justify-between">
+                    <div>
+                        <div class="text-sky-400 font-bold text-xs uppercase tracking-wider mb-1">الأسبوع الرابع</div>
+                        <div class="text-white font-bold text-base mb-3">التقييم وإعداد التقرير</div>
+                        <ul class="text-slate-300 text-xs space-y-2">
+                            <li>• مراجعة نتائج الشهر بالكامل.</li>
+                            <li>• تحليل أداء الحسابات والحملات.</li>
+                            <li>• إعداد تقرير الأداء الشهري.</li>
+                            <li>• تحديد نقاط القوة والفرص المتاحة.</li>
+                            <li>• وضع التوصيات والخطة التطويرية للشهر التالي.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- سادساً: مؤشرات قياس الأداء (KPIs) -->
+        <section class="glass-card p-6 sm:p-8 rounded-3xl border-t-4 border-t-teal-400">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-300 font-black flex items-center justify-center border border-teal-500/30">6</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">سادساً: مؤشرات قياس الأداء (KPIs)</h3>
+            </div>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+                يتم تقييم الأداء بناءً على مجموعة من المؤشرات التي تختلف أولوياتها حسب طبيعة النشاط والأهداف التسويقية، ومنها:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm border-r-2 border-r-teal-400">
+                    نمو الحسابات والوصول إلى شرائح جديدة من الجمهور.
+                </div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm border-r-2 border-r-sky-400">
+                    معدلات التفاعل والمشاركة مع المحتوى.
+                </div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm border-r-2 border-r-teal-400">
+                    عدد الزيارات إلى الحسابات والموقع الإلكتروني.
+                </div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm border-r-2 border-r-sky-400">
+                    معدلات النقر على الإعلانات.
+                </div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm border-r-2 border-r-teal-400">
+                    عدد الاستفسارات والعملاء المحتملين الناتجين عن الحملات.
+                </div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm border-r-2 border-r-sky-400">
+                    تكلفة الحصول على النتيجة الإعلانية.
+                </div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm border-r-2 border-r-teal-400">
+                    كفاءة الإنفاق الإعلاني.
+                </div>
+                <div class="p-3.5 sub-card rounded-xl text-slate-300 text-xs sm:text-sm border-r-2 border-r-sky-400">
+                    تطور الأداء مقارنة بالفترات السابقة.
+                </div>
+            </div>
+        </section>
+
+        <!-- سابعاً: مخرجات الخدمة -->
+        <section class="glass-card p-6 sm:p-8 rounded-3xl border-t-4 border-t-cyan-400">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-9 h-9 rounded-xl bg-cyan-500/20 text-cyan-300 font-black flex items-center justify-center border border-cyan-500/30">7</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">سابعاً: مخرجات الخدمة</h3>
+            </div>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+                تتضمن الخدمة تقديم منظومة متكاملة من الأعمال التسويقية الشهرية، وتشمل:
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> خطة محتوى شهرية.
+                </div>
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> كتابة المحتوى التسويقي والإبداعي.
+                </div>
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> تصميم المنشورات والمواد البصرية.
+                </div>
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> جدولة ونشر المحتوى.
+                </div>
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> متابعة التفاعل على الحسابات.
+                </div>
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> إعداد وإدارة الحملات الإعلانية.
+                </div>
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> المتابعة والتحسين المستمر للحملات.
+                </div>
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> تحليل مؤشرات الأداء.
+                </div>
+                <div class="sub-card p-3.5 rounded-xl text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                    <span class="text-teal-400">✔</span> تقرير دوري بالنتائج والتوصيات.
+                </div>
+            </div>
+            <div class="p-3.5 bg-slate-950/70 rounded-2xl text-slate-300 text-xs leading-relaxed border border-teal-500/20">
+                يتم تحديد عدد المنشورات والتصاميم وتوزيع المحتوى بين المنصات وفق نطاق العمل المتفق عليه عند بدء التعاقد، وبما يتناسب مع طبيعة النشاط والميزانية المحددة.
+            </div>
+        </section>
+
+        <!-- ثامناً: العرض المالي -->
+        <section class="glass-card p-6 sm:p-8 rounded-3xl border-t-4 border-t-teal-400">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-300 font-black flex items-center justify-center border border-teal-500/30">8</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">ثامناً: العرض المالي</h3>
+            </div>
+            
+            <p class="text-slate-300 text-sm mb-4">
+                مقابل تنفيذ وإدارة الخدمات الموضحة في العرض الفني، تكون التكلفة كالتالي:
+            </p>
+
+            <div class="bg-gradient-to-r from-teal-950/80 via-slate-900 to-sky-950/80 border-2 border-teal-400/40 p-6 rounded-3xl mb-6 text-center shadow-xl">
+                <div class="text-slate-300 text-sm font-medium mb-1">قيمة الاشتراك الشهري:</div>
+                <div class="text-3xl sm:text-4xl font-black text-teal-300">
+                    2,500 ريال سعودي فقط لا غير.
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="font-bold text-slate-100 text-base">ملاحظات وشروط العرض:</h4>
+                <ul class="space-y-2 text-slate-300 text-xs sm:text-sm pr-2">
+                    <li>• السعر يشمل أتعاب إدارة حسابات التواصل الاجتماعي وإدارة الحملات الإعلانية وفق نطاق العمل المتفق عليه.</li>
+                    <li>• الميزانية الإعلانية المدفوعة للمنصات غير مشمولة في قيمة الاشتراك، ويتحمل العميل تكلفتها بشكل مستقل.</li>
+                    <li>• يتم توفير صلاحيات الوصول إلى الحسابات والمنصات الإعلانية من جانب العميل.</li>
+                    <li>• يتم اعتماد المحتوى والتصاميم قبل النشر وفق آلية العمل المتفق عليها.</li>
+                    <li>• يتم الاتفاق على المنصات المستهدفة ونطاق العمل التفصيلي قبل بدء التنفيذ.</li>
+                    <li>• لا يتضمن العرض ضمان أرقام محددة للمبيعات أو العملاء المحتملين، حيث تتأثر النتائج بعوامل متعددة تشمل طبيعة النشاط والمنتج والسوق والميزانية الإعلانية والمنافسة.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ختاماً -->
+        <footer class="glass-card p-6 sm:p-8 rounded-3xl text-right border-t-4 border-t-teal-400/80">
+            <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-teal-400"></span>
+                ختاماً
+            </h3>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                نؤمن بأن نجاح التسويق الرقمي لا يعتمد على النشر والإعلان فقط، بل على تكامل التخطيط والمحتوى والإبداع والتحليل والتحسين المستمر.
+            </p>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base mt-2.5">
+                ونسعى من خلال هذه الشراكة إلى بناء حضور رقمي احترافي للعلامة التجارية، وتعزيز علاقتها بجمهورها المستهدف، وتحويل الأنشطة التسويقية إلى فرص حقيقية لدعم النمو التجاري.
+            </p>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base mt-2.5 font-semibold">
+                يسعدنا أن نكون شركاء نجاحكم، ونتطلع إلى بدء العمل وتحقيق نتائج تسويقية متميزة.
+            </p>
+            <div class="text-teal-300 font-bold text-sm sm:text-base mt-5">
+                وتفضلوا بقبول فائق الاحترام والتقدير.
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
